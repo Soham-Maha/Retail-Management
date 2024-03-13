@@ -1,12 +1,16 @@
-#include<iostream>
+#include <iostream>
 
 using namespace std;
 
-class shop{
-
+class shop
+{
+private:
+    int pcode;
+    
 };
 
-int main(){
-    
+int main()
+{
+
     return 0;
 }
