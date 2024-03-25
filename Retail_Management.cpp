@@ -1,3 +1,5 @@
+//Pick up any one of the functions and start editing if you feel necessary
+
 #include <iostream>
 #include <string>
 
@@ -18,16 +20,18 @@ protected:
     string pName;
 
 public:
-    void menu();
-    void admin();
-    void buyer();
-    void add();
-    void edit();
-    void remove();
-    void enterDetails();
-    void diplayList();
-    void buy();
-    void receipt();
+    void menu();  //Main Menu
+    void admin(); //Menu For the Admin
+    void buyer(); //Menu For the Buyer
+    void add();   //Add Products in the Store
+    void edit();  //Edit Number of Products in the Store
+    void remove();//Remove Products in the Store
+    void enterDetails();//Enter User Details(Name and Phone Number)
+    void diplayList();//Enter the Products available for the Customer to buy
+    void buy(); //Function for the Customer to add products to the cart and later buy it
+    void receipt();//Print a receipt for all the products bought
+
+                    //Add any function if required
 };
 
 void shop ::menu()
