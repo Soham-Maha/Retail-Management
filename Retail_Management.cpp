@@ -24,7 +24,9 @@ public:
     void add();
     void edit();
     void remove();
+    void enterDetails();
     void diplayList();
+    void buy();
     void receipt();
 };
 
@@ -80,7 +82,7 @@ m:
 void shop ::admin()
 {
     int choice;
-    
+
 }
 
 int main()
