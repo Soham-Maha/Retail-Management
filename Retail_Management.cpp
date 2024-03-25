@@ -30,6 +30,7 @@ public:
 
 void shop ::menu()
 {
+m:
     int choice;
 
     cout << "\t\t\t\t_____________________________________________________\n";
@@ -51,19 +52,35 @@ void shop ::menu()
     switch (choice)
     {
     case 1:
+    {
         admin();
         break;
+    }
 
     case 2:
+    {
         buyer();
         break;
-    
-    case 3:
-        break;
-    
-    default:
-        break;
     }
+
+    case 3:
+    {
+        exit(0);
+    }
+
+    default:
+    {
+        cout << "\t\t\t\t Please Enter a valid option. ";
+    }
+    }
+
+    goto m;
+}
+
+void shop ::admin()
+{
+    int choice;
+    
 }
 
 int main()
