@@ -114,7 +114,12 @@ m:
 
     case 3:
     {
-        exit(0);
+        remove();
+        break;
+    }
+    case 4:
+    {
+        exit(0);        
     }
 
     default:
