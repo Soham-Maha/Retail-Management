@@ -85,7 +85,45 @@ m:
 
 void shop ::admin()
 {
+m:
     int choice;
+    cout << "\t\t\t\t_____________________________________________________\n";
+    cout<<"\n\n\t\t\t     Admin Menu\n";
+    cout << "\t\t\t\t_____________________________________________________\n";
+    cout<<"\t\t\t    1)Add the Product\n";
+    cout<<"\t\t\t    2)Modify the Product\n";
+    cout<<"\t\t\t    3)Delete the Product\n";
+    cout<<"\t\t\t    4)Back to main menu\n";
+    
+    cout << "\t\t\t\t Please select option(1-4): ";
+    cin>>choice;
+    
+    switch (choice)
+    {
+    case 1:
+    {
+        add();
+        break;
+    }
+
+    case 2:
+    {
+        edit();
+        break;
+    }
+
+    case 3:
+    {
+        exit(0);
+    }
+
+    default:
+    {
+        cout << "\t\t\t\t Please Enter a valid option. ";
+    }
+    }
+
+    goto m;
 
 }
 
