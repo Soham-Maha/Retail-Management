@@ -119,7 +119,7 @@ m:
     }
     case 4:
     {
-        exit(0);        
+        menu();        
     }
 
     default:
@@ -130,6 +130,38 @@ m:
 
     goto m;
 
+}
+void shop::buyer(){
+m:
+	int choice;
+    cout << "\t\t\t\t_____________________________________________________\n";
+    cout<<"\n\n\t\t\t     Buyer Menu\n";
+    cout << "\t\t\t\t_____________________________________________________\n";
+    cout<<"\t\t\t    1)Buy the Product\n";
+    cout<<"\t\t\t    2)Back to main menu\n";
+    
+    cout << "\t\t\t\t Please select option(1-2): ";
+    cin>>choice;
+    switch (choice)
+    {
+    case 1:
+    {
+        receipt();
+        break;
+    }
+
+    case 2:
+    {
+        menu(); 
+        break;
+    }
+
+    default:
+    {
+        cout << "\t\t\t\t Please Enter a valid option. ";
+    }
+    }
+	goto m;
 }
 
 int main()
