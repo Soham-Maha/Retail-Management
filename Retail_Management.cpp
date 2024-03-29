@@ -208,7 +208,7 @@ void shop::edit()
     }
     else
     {
-        detal.open("database1.txt," ios::app | ios::out);
+        data1.open("database1.txt", ios::app | ios::out);
         data >> pCode >> pName >> price >> dis;
         while (!data.eof())
         {
