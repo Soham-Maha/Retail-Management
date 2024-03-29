@@ -286,6 +286,7 @@ void shop ::receipt() {
 
 int main()
 {
-
+    shop s;
+    s.menu();
     return 0;
 }
