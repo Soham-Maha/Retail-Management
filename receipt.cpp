@@ -20,7 +20,7 @@ void shop ::receipt() {
     cin >> arrPQuantity[i];
   }
   for (int i = 0; i < bProducts; i++) {
-    if (arrPcode[i] == Pcode[i]) {
+    if (arrPcode[i] == pCode[i]) {
       amount = amount + arrPQuantity[i] * price;
     }
   }
