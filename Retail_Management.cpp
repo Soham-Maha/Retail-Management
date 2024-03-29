@@ -163,7 +163,7 @@ m:
     }
 	goto m;
 }
-void shop :: receipt();
+
 
 int main()
 {
