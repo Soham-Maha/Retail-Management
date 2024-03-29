@@ -1,4 +1,4 @@
-void shopping :: add()
+void shop :: add()
 {
     fstream data;
     int c;
