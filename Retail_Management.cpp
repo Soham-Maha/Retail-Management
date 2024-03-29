@@ -146,7 +146,8 @@ m:
     {
     case 1:
     {
-        receipt();
+        buy();
+	receipt();
         break;
     }
 
