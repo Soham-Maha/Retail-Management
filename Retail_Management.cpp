@@ -146,7 +146,6 @@ m:
     {
     case 1:
     {
-        buy();
 	receipt();
         break;
     }
@@ -164,6 +163,7 @@ m:
     }
 	goto m;
 }
+void shop :: receipt();
 
 int main()
 {
