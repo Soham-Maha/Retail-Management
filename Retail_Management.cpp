@@ -1,5 +1,10 @@
 // Pick up any one of the functions and start editing if you feel necessary
-
+/* Issues with the code
+1 not a good application of inheritance
+2 no polymorphism
+3 no file handling 
+4 functions ae not well thought 
+5 complete plagarism */
 #include <iostream>
 #include <string>
 #include<fstream>
