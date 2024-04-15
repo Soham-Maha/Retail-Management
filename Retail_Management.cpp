@@ -195,7 +195,8 @@ void shop ::add()
     data.open("database.txt", ios::in);
 
     if(!data){
-        data.open("database.txt", ios::app||ios::out);
+        data.open("database.txt", ios::app|ios::out);
+        
     }
 }
 
