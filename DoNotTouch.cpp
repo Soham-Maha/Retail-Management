@@ -2,14 +2,14 @@
 #include <string>
 using namespace std;
 
-class person
+class Person
 {
 protected:
     int phoneNo;
     string name;
 };
 
-class product
+class Product
 {
 protected:
     int pId;
@@ -18,7 +18,7 @@ protected:
     float discount;
 };
 
-class admin : public person, public product
+class Admin : public Person, public Product
 {
 public:
     void menu();
@@ -28,7 +28,7 @@ public:
     void displayAll();
 };
 
-class buyer : public person{
+class Buyer : public Person{
     void menu();
     void search();
     void buy();
