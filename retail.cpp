@@ -1,5 +1,6 @@
 #include<iostream>
 #include<fstream>
+#include<string>
 /*In the updated code:
 
 The Shopping class is now an abstract base class with a pure virtual method menu() that is overridden by
@@ -307,11 +308,15 @@ public:
                 while (!data.eof()) {
                     if (pcode == arrc[i]) {
                         amount = price * arrq[i];
+                        dis -= arrq[i];
+
+                        
 
                         total += amount;
                         cout << "\n\t\t\t\t\t\t  " << pcode << "\t\t  " << pname << "\t\t" << arrq[i] << "\t\t" << price
                              << "\t" << amount;
                     }
+                    
                     data >> pcode >> pname >> price >> dis;
                 }
 

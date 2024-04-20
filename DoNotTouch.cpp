@@ -36,3 +36,5 @@ class Buyer : public Person{
     void displayAllProds();
     void del();
 };
+
+void 
