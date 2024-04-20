@@ -17,9 +17,9 @@ using namespace std;
 
 class Shopping {
 protected:
-    int pcode = NULL; // product code
-    float price = NULL;
-    float dis = NULL; // discount
+    int pcode; // product code
+    float price;
+    float dis; // discount
     string pname; // name of the product
 
 public:
