@@ -18,9 +18,11 @@ using namespace std;
 class Shopping {
 protected:
     int pcode; // product code
-    float price;
-    float dis; // discount
+    float price ;
+    float dis ; // discount
     string pname; // name of the product
+    int quantity;
+
 
 public:
     virtual void menu() = 0; // Make menu a pure virtual function, ensuring subclasses implement it
@@ -31,13 +33,13 @@ public:
         data.open("database.txt", ios::in);
 
         cout << "\n\n\t\t\t\t\t\t|____________________________________________________________________|\n";
-        cout << "\t\t\t\t\t\t  Product No. \t  Name \t\t Price \n";
+        cout << "\t\t\t\t\t\t  Product No. \t  Name \t\t Price \t\t quantity \n";
         cout << "\n\n\t\t\t\t\t\t|____________________________________________________________________|\n";
-        data >> pcode >> pname >> price >> dis;
+        data >> pcode >> pname >> price >> quantity;
 
         while (!data.eof()) {
-            cout << "\t\t\t\t\t\t   " << pcode << "\t\t" << pname << "\t\t " << price << "\n";
-            data >> pcode >> pname >> price >> dis; // for iteration purpose
+            cout << "\t\t\t\t\t\t   " << pcode << "\t\t" << pname << "\t\t " << price << "\t\t"<<quantity<<"\n";
+            data >> pcode >> pname >> price >>  quantity; // for iteration purpose
         }
 
         data.close();
@@ -137,7 +139,7 @@ public:
         int token = 0;
         int c;
         float p;
-        float d;
+        float q;
         string n;
 
         cout << "\n\t\t\t\t\t\t  Modify the Product";
@@ -160,16 +162,16 @@ public:
                     cin >> n;
                     cout << "\n\t\t\t\t\t\t  Enter new Price: ";
                     cin >> p;
-                    cout << "\n\t\t\t\t\t\t  Enter new Discount: ";
-                    cin >> d;
+                    cout << "\n\t\t\t\t\t\t  Enter new Quantity: ";
+                    cin >> q;
 
-                    data1 << " " << c << " " << n << " " << p << " " << d << "\n";
+                    data1 << " " << c << " " << n << " " << p << " " << q << "\n";
                     cout << "\n\n\t\t\t\t\t\t  Record Edited!";
                     token++;
                 } else {
-                    data1 << " " << pcode << " " << pname << " " << price << " " << dis << "\n";
+                    data1 << " " << pcode << " " << pname << " " << price << " " << q << "\n";
                 }
-                data >> pcode >> pname >> price >> dis;
+                data >> pcode >> pname >> price >> q;
             }
 
             data.close();
@@ -281,6 +283,7 @@ public:
                 cout << "\n\n\t\t\t\t\t\t  Enter the product Quantity: ";
                 cin >> arrq[c];
 
+
                 for (int i = 0; i < c; i++) {
                     if (arrc[c] == arrc[i]) {
                         cout << "\n\n\t\t\t\t\t\t  Duplicate Product Code. Please try again: ";
@@ -295,7 +298,7 @@ public:
 
             cout << "\n\n\t\t\t\t\t\t_____________________________RECEIPT________________________\n";
             cout
-                    << "\n\t\t\t\t\t\t Product No.\t Product Name\t Product quantity\t Price\t Amount\t Amount with Discount\n";
+                    << "\n\t\t\t\t\t\t Product No.\t Product Name\t Product quantity\t Price\t Amount\n";
 
             for (int i = 0; i < c; i++) {
                 data.open("database.txt", ios::in);
@@ -304,10 +307,10 @@ public:
                 while (!data.eof()) {
                     if (pcode == arrc[i]) {
                         amount = price * arrq[i];
-                        dis = amount - (amount * dis / 100);
-                        total += dis;
+
+                        total += amount;
                         cout << "\n\t\t\t\t\t\t  " << pcode << "\t\t  " << pname << "\t\t" << arrq[i] << "\t\t" << price
-                             << "\t" << amount << "\t\t" << dis;
+                             << "\t" << amount;
                     }
                     data >> pcode >> pname >> price >> dis;
                 }
