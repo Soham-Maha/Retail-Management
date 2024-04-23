@@ -316,9 +316,7 @@ public:
                 while (!data.eof()) {
                     if (pcode == arrc[i]) {
                         amount = price * arrq[i];
-                        dis -= arrq[i];
-
-                        
+                        // quantity -=arrq[i]
 
                         total += amount;
                         cout << "\n\t\t\t\t  " << pcode << "\t\t  " << pname << "\t\t" << arrq[i] << "\t\t" << price
@@ -351,12 +349,12 @@ public:
         cout << "\t\t\t\t|________________________________________________________________________________|\n";
         cout << endl;
 
-        cout << "\t\t\t\t|                        (1) Administrator                     |\n";
-        cout << "\t\t\t\t|                                                              |\n";
-        cout << "\t\t\t\t|                        (2) Buyer                             |\n";
-        cout << "\t\t\t\t|                                                              |\n";
-        cout << "\t\t\t\t|                        (3) Exit                              |\n";
-        cout << "\t\t\t\t|                                                              |\n";
+        cout << "\t\t\t\t|                        (1) Administrator                                     |\n";
+        cout << "\t\t\t\t|                                                                              |\n";
+        cout << "\t\t\t\t|                        (2) Buyer                                             |\n";
+        cout << "\t\t\t\t|                                                                              |\n";
+        cout << "\t\t\t\t|                        (3) Exit                                              |\n";
+        cout << "\t\t\t\t|                                                                              |\n";
 
         cout << endl;
         cout << "\t\t\t\t  Please Select: ";
