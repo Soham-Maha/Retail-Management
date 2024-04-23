@@ -1,4 +1,4 @@
- 101 Apple 50 0
+ 101 Apple 50 1.42829e+029
  102 Banana 30 75
  103 Orange 40 60
  104 Mango 60 40
@@ -97,4 +97,4 @@
  197 Garlic_Powder 20 110
  198 Onion_Powder 20 110
  199 Ground_Ginger 20 110
- 200 Ground_clove 40 300
+ 200 Ground_Clove 40 90

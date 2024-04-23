@@ -309,9 +309,7 @@ public:
                     if (pcode == arrc[i]) {
                         amount = price * arrq[i];
                         dis -= arrq[i];
-
                         
-
                         total += amount;
                         cout << "\n\t\t\t\t\t\t  " << pcode << "\t\t  " << pname << "\t\t" << arrq[i] << "\t\t" << price
                              << "\t" << amount;
