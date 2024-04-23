@@ -20,7 +20,6 @@ class Shopping {
 protected:
     int pcode; // product code
     float price ;
-    float dis ; // discount
     string pname; // name of the product
     int quantity;
 
@@ -66,25 +65,33 @@ public:
         cout << endl;
 
         cout << "\n\t\t\t\t\t\t  Please Enter your choice: ";
-        cin >> choice;
+
+        while(choice!=5){
+            cin >> choice;
 
         switch (choice) {
             case 1:
                 add(); // to add a new product
+                cout<<"\t\t\t\t\t\tif you wish to continue choose again, else press 5"<<endl;
+
                 break;
             case 2:
                 edit(); // to modify or edit the existing product
+                cout<<"\t\t\t\t\t\tif you wish to continue choose again, else press 5"<<endl;
                 break;
             case 3:
                 remove(); // to remove the product
+                cout<<"\t\t\t\t\t\tif you wish to continue choose again, else press 5"<<endl;
                 break;
             case 4:
                 list(); // to list products
+                cout<<"\t\t\t\t\t\tif you wish to continue choose again, else press 5"<<endl;
                 break;
             case 5:
                 return; // exit the menu
             default:
                 cout << "\t\t\t\t\t\t  Invalid Choice!!" << endl;
+        }
         }
     }
 
@@ -103,14 +110,14 @@ public:
         cin >> pname;
         cout << "\n\n\t\t\t\t\t\t  Price of the Product: ";
         cin >> price;
-        cout << "\n\n\t\t\t\t\t\t  Discount on Product: ";
-        cin >> dis;
+        cout << "\n\n\t\t\t\t\t\t  Quantity of the Product: ";
+        cin >> quantity;
 
         data.open("database.txt", ios::in);
 
         if (!data) {
             data.open("database.txt", ios::app | ios::out);
-            data << " " << pcode << " " << pname << " " << price << " " << dis << "\n";
+            data << " " << pcode << " " << pname << " " << price << " " << quantity << "\n";
             data.close();
         } else {
             data >> c >> n >> p >> d;
@@ -127,7 +134,7 @@ public:
                 cout << "\n\t\t\t\t\t\t  Product already exists!" << endl;
             } else {
                 data.open("database.txt", ios::app | ios::out);
-                data << " " << pcode << " " << pname << " " << price << " " << dis << "\n";
+                data << " " << pcode << " " << pname << " " << price << " " << quantity << "\n";
                 data.close();
                 cout << "\n\t\t\t\t\t\t  Record Inserted Successfully!" << endl;
             }
@@ -153,7 +160,7 @@ public:
             cout << "\n\n\t\t\t\t\t\t  File doesn't Exist!";
         } else {
             data1.open("database1.txt", ios::app | ios::out);
-            data >> pcode >> pname >> price >> dis;
+            data >> pcode >> pname >> price >> quantity;
 
             while (!data.eof()) {
                 if (pkey == pcode) {
@@ -202,16 +209,16 @@ public:
             cout << "\t\t\t\t\t\t  File doesn't Exist" << endl;
         } else {
             data1.open("database1.txt", ios::app | ios::out);
-            data >> pcode >> pname >> price >> dis;
+            data >> pcode >> pname >> price >> quantity;
 
             while (!data.eof()) {
                 if (pcode == pkey) {
                     cout << "\n\n\t\t\t\t\t\t  Product deleted Successfully ";
                     token++;
                 } else {
-                    data1 << " " << pcode << " " << pname << " " << price << " " << dis << "\n";
+                    data1 << " " << pcode << " " << pname << " " << price << " " << quantity << "\n";
                 }
-                data >> pcode >> pname >> price >> dis;
+                data >> pcode >> pname >> price >> quantity;
             }
 
             data.close();
@@ -303,21 +310,21 @@ public:
 
             for (int i = 0; i < c; i++) {
                 data.open("database.txt", ios::in);
-                data >> pcode >> pname >> price >> dis;
+                data >> pcode >> pname >> price >> quantity;
 
                 while (!data.eof()) {
                     if (pcode == arrc[i]) {
                         amount = price * arrq[i];
-                        dis -= arrq[i];
 
-                        
+
+
 
                         total += amount;
                         cout << "\n\t\t\t\t\t\t  " << pcode << "\t\t  " << pname << "\t\t" << arrq[i] << "\t\t" << price
                              << "\t" << amount;
                     }
-                    
-                    data >> pcode >> pname >> price >> dis;
+
+                    data >> pcode >> pname >> price >> quantity;
                 }
 
                 data.close();
