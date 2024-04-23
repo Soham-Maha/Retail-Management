@@ -19,7 +19,7 @@ using namespace std;
 class Shopping {
 protected:
     int pcode; // product code
-    float price ;
+    float price;
     string pname; // name of the product
     int quantity;
 
@@ -38,8 +38,8 @@ public:
         data >> pcode >> pname >> price >> quantity;
 
         while (!data.eof()) {
-            cout << "\t\t\t\t   " << pcode << "\t\t" << pname << "\t\t " << price << "\t\t"<<quantity<<"\n";
-            data >> pcode >> pname >> price >>  quantity; // for iteration purpose
+            cout << "\t\t\t\t   " << pcode << "\t\t" << pname << "\t\t " << price << "\t\t" << quantity << "\n";
+            data >> pcode >> pname >> price >> quantity; // for iteration purpose
         }
 
         data.close();
@@ -66,33 +66,36 @@ public:
 
         cout << "\n\t\t\t\t  Please Enter your choice: ";
 
-        while(choice!=5){
+        while (choice != 5) {
             cin >> choice;
 
-        switch (choice) {
-            case 1:
-                add(); // to add a new product
-                cout<<"\t\t\t\tif you wish to continue choose again, else press 5"<<endl;
+            switch (choice) {
+                case 1:
+                    add(); // to add a new product
+                    cout << "\t\t\t\tif you wish to continue choose again, else press 5" << endl;
 
-                break;
-            case 2:
-                edit(); // to modify or edit the existing product
-                cout<<"\t\t\t\tif you wish to continue choose again, else press 5"<<endl;
-                break;
-            case 3:
-                remove(); // to remove the product
-                cout<<"\t\t\t\tif you wish to continue choose again, else press 5"<<endl;
-                break;
-            case 4:
-                list(); // to list products
-                cout<<"\t\t\t\tif you wish to continue choose again, else press 5"<<endl;
-                break;
-            case 5:
-                return;// exit the menu
-            default:
-                cout << "\t\t\t\t  Invalid Choice!!" << endl;
+                    break;
+                case 2:
+                    edit(); // to modify or edit the existing product
+                    cout << "\t\t\t\tif you wish to continue choose again, else press 5" << endl;
+                    break;
+                case 3:
 
-        }
+                    remove(); // to remove the product
+                    cout << "\t\t\t\tif you wish to continue choose again, else press 5" << endl;
+                    break;
+                case 4:
+                    list(); // to list products
+                    cout << "\t\t\t\tif you wish to continue choose again, else press 5" << endl;
+                    break;
+                case 5:
+
+
+                    return;// exit the menu
+                default:
+                    cout << "\t\t\t\t  Invalid Choice!!" << endl;
+
+            }
         }
     }
 
@@ -260,14 +263,16 @@ public:
     }
 
     void receipt() {
-        fstream data;
+        fstream data, data2;
         int arrc[100]; // to hold the code of the various products
         int arrq[100]; // to hold the quantity of each product
 
         string choice;
         int c = 0; // counter
         float amount;
-        float dis = 0;
+
+        bool found = false;
+
         float total = 0;
 
         cout << "\n\n\t\t\t\t                          RECEIPT                      ";
@@ -289,8 +294,33 @@ public:
             do {
                 cout << "\n\n\t\t\t\t  Enter Product Code: ";
                 cin >> arrc[c];
+                data.open("database.txt", ios::in);
+
+
+                while (!data.eof()) {
+                    data >> pcode >> pname >> price >> quantity;
+                    if (pcode == arrc[c]) {
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (!found) {
+                    cout << "\n\n\t\t\t\t  Product not found. Please refer to inventory and try later.";
+
+                    return;
+                }
+
+                data.close();
+
+
                 cout << "\n\n\t\t\t\t  Enter the product Quantity: ";
                 cin >> arrq[c];
+
+                if (arrq[c] > quantity) {
+                    cout << "\n\n\t\t\t\t  Required quantity not in stock. Please try again later.";
+                    return;
+                }
 
 
                 for (int i = 0; i < c; i++) {
@@ -310,23 +340,28 @@ public:
                     << "\n\t\t\t\t Product No.\t Product Name\t Product quantity\t Price\t Amount\n";
 
             for (int i = 0; i < c; i++) {
-                data.open("database.txt", ios::in);
-                data >> pcode >> pname >> price >> quantity;
+                data.open("database.txt", ios::in );
+                data2.open("database2.txt", ios::app);
 
-                while (!data.eof()) {
+                while (data >> pcode >> pname >> price >> quantity) {
+                    
                     if (pcode == arrc[i]) {
+                        quantity -= arrq[i];
                         amount = price * arrq[i];
-                        // quantity -=arrq[i]
-
                         total += amount;
+
                         cout << "\n\t\t\t\t  " << pcode << "\t\t  " << pname << "\t\t" << arrq[i] << "\t\t" << price
                              << "\t" << amount;
                     }
+                    data2 << pcode << " " << pname << " " << price << " " << quantity << "\n";
 
-                    data >> pcode >> pname >> price >> quantity;
                 }
 
                 data.close();
+                data2.close();
+
+                ::remove("database.txt");
+                rename("database2.txt", "database.txt");
             }
 
             cout << "\n\n\t\t\t\t___________________________________________________________";
@@ -349,12 +384,12 @@ public:
         cout << "\t\t\t\t|________________________________________________________________________________|\n";
         cout << endl;
 
-        cout << "\t\t\t\t|                        (1) Administrator                                     |\n";
-        cout << "\t\t\t\t|                                                                              |\n";
-        cout << "\t\t\t\t|                        (2) Buyer                                             |\n";
-        cout << "\t\t\t\t|                                                                              |\n";
-        cout << "\t\t\t\t|                        (3) Exit                                              |\n";
-        cout << "\t\t\t\t|                                                                              |\n";
+        cout << "\t\t\t\t|                        (1) Administrator                     |\n";
+        cout << "\t\t\t\t|                                                              |\n";
+        cout << "\t\t\t\t|                        (2) Buyer                             |\n";
+        cout << "\t\t\t\t|                                                              |\n";
+        cout << "\t\t\t\t|                        (3) Exit                              |\n";
+        cout << "\t\t\t\t|                                                              |\n";
 
         cout << endl;
         cout << "\t\t\t\t  Please Select: ";
@@ -372,7 +407,7 @@ public:
                 admin.menu();
             } else {
                 cout << "\t\t\t\tInvalid Email or Password!\n\t\t\t\tTry again\n";
-            this->mainMenu();
+                this->mainMenu();
 
             }
         } else if (choice == 2) {
