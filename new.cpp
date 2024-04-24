@@ -32,13 +32,13 @@ public:
         fstream data;
         data.open("database.txt", ios::in);
 
-        cout << "\n\n\t\t\t\t|____________________________________________________________________|\n";
-        cout << "\t\t\t\t  Product No. \t  Name \t\t Price \t\t quantity \n";
-        cout << "\n\n\t\t\t\t|____________________________________________________________________|\n";
+        cout << "\n\n\t\t\t\t|_______________________________________________________________________|\n";
+        cout << "\t\t\t\t  Product No. \t  Name \t\t\t Price \t\t\t quantity \n";
+        cout << "\n\n\t\t\t\t|_______________________________________________________________________|\n";
         data >> pcode >> pname >> price >> quantity;
 
         while (!data.eof()) {
-            cout << "\t\t           " << pcode << "\t\t               " << pname << "\t\t        " << price << "\t\t        " << quantity << "\n";
+            cout << "\t\t\t           " << pcode << "\t        " << pname << "\t\t       " << price << "\t\t       " << quantity << "\n";
             data >> pcode >> pname >> price >> quantity; // for iteration purpose
         }
 
