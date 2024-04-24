@@ -250,7 +250,7 @@ class Buyer : public Shopping {
 public:
     void menu() override {
         int choice;
-        cout << "  \t\t\t\t________________________________________________________________________\n";
+        cout << "  \t\t\t\t_________________________________________________________________________\n";
         cout << "  \t\t\t\t|                                                                       |\n";
         cout << "  \t\t\t\t|                              Buyer Menu                               |\n";
         cout << "  \t\t\t\t|                                                                       |\n";
@@ -259,6 +259,8 @@ public:
         cout << "\n\t\t\t\t|                         1) Buy Product                                |";
         cout << "\n\t\t\t\t|                                                                       |";
         cout << "\n\t\t\t\t|                         2) Go back                                    |\n";
+        cout<<  "\t\t\t\t|                                                                       |\n";
+        cout<<  "\t\t\t\t|                         3) Customer Care                              |\n";
         cout << "  \t\t\t\t|_______________________________________________________________________|";
         cout << endl;
 
@@ -270,9 +272,56 @@ public:
                 receipt();
                 break;
             case 2:
+
                 return; // exit the menu
+            case 3:
+                 cc_menu();
+                break;
             default:
                 cout << "\t\t\t\t  Invalid Choice!!" << endl;
+        }
+    }
+    void cc_menu(){
+        string prod;
+        int quant;
+        cout << "  \t\t\t\t________________________________________________________________________\n";
+        cout << "  \t\t\t\t|                                                                       |\n";
+        cout << "  \t\t\t\t|                        Customer Care Menu                             |\n";
+        cout<<  "  \t\t\t\t|_______________________________________________________________________|\n";
+        cout << "  \t\t\t\t|                                                                       |";
+        cout << "\n\t\t\t\t|                        1) Unsatisfied with the Product                |";
+        cout << "\n\t\t\t\t|                                                                       |";
+        cout << "\n\t\t\t\t|                        2) Expired Product                             |";
+        cout << "\n\t\t\t\t|                                                                       |";
+        cout << "\n\t\t\t\t|                        3) Order a Product in Bulk                     |";
+        cout << "\n\t\t\t\t|                                                                       |";
+        cout << "\n\t\t\t\t|                        4) Other Issues                                |";
+        cout << "\n\t\t\t\t|                                                                       |";
+        cout << "\n\t\t\t\t|                        5) Go Back                                     |";
+        cout << "\n\t\t\t\t|_______________________________________________________________________|\n";
+        int choice;
+        cin>>choice;
+        switch (choice) {
+            case 1:
+                cout<<"\t\t\t\t\t\tThis is the Store number:9875xxxxxx.\n\t\t\t\tOr contact us at this email xxxxxyy@gmail.com\n\t\t\t\tFeel free to submit your query.\n\t\t\t\tYour response is valuable to us."<<endl;
+                return;
+            case 2:
+                cout<<"\t\t\t\t\tKindly attach a pic of the expiry date with the bill , your address.\n\t\t\t\t\t Send the email at xxxxxyy@gmail.com . We will send a replacement immediately.\n\t\t\t\t\tSorry for the inconvenience. ";
+                return;
+            case 3:
+                cout<<"kindly enter the name of the product:"<<endl;
+                cin>>prod;
+                cout<<"kindly enter the quantity:";
+                cin>>quant;
+                cout<<"You will be notified as soon the order will arrive.";
+                return;
+            case 4:
+                cout<<"For other issues kindly meet the cc executive at the nearby store";
+                return;
+            case 5:
+                this->menu();
+            default:
+                cout<<"Invalid Choice";
         }
     }
 
@@ -363,7 +412,7 @@ public:
                 data2.open("database2.txt", ios::app);
 
                 while (data >> pcode >> pname >> price >> quantity) {
-                    
+
                     if (pcode == arrc[i]) {
                         quantity -= arrq[i];
                         amount = price * arrq[i];
