@@ -52,16 +52,23 @@ public:
     void menu() override {
         int choice;
         cout << endl;
-        cout << "\t\t\t\t Administrator Menu \n";
-        cout << "\n\t\t\t\t|__________1) Add new product_________________|";
-        cout << "\n\t\t\t\t|                                             |";
-        cout << "\n\t\t\t\t|__________2) Modify the product______________|";
-        cout << "\n\t\t\t\t|                                             |";
-        cout << "\n\t\t\t\t|__________3) Remove product__________________|";
-        cout << "\n\t\t\t\t|                                             |";
-        cout << "\n\t\t\t\t|__________4) List products___________________|";
-        cout << "\n\t\t\t\t|                                             |";
-        cout << "\n\t\t\t\t|__________5) Back to Main menu_______________|";
+        cout << "  \t\t\t\t________________________________________________________________________\n";
+        cout << "  \t\t\t\t|                                                                       |\n";
+        cout << "  \t\t\t\t|                              Administrator Menu                       |\n";
+        cout<<  "  \t\t\t\t|_______________________________________________________________________|\n";
+        cout << "  \t\t\t\t|                                                                       |";
+        cout << "\n\t\t\t\t|______________________________1) Add new product_______________________|";
+        cout << "\n\t\t\t\t|                                                                       |";
+        cout << "\n\t\t\t\t|______________________________2) Modify the product____________________|";
+        cout << "\n\t\t\t\t|                                                                       |";
+        cout << "\n\t\t\t\t|______________________________3) Remove product________________________|";
+        cout << "\n\t\t\t\t|                                                                       |";
+        cout << "\n\t\t\t\t|______________________________4) List products_________________________|";
+        cout << "\n\t\t\t\t|                                                                       |";
+        cout << "\n\t\t\t\t|______________________________5) Back to Main menu_____________________|";
+        cout << "\n\t\t\t\t|_______________________________________________________________________|";
+
+
         cout << endl;
 
         cout << "\n\t\t\t\t  Please Enter your choice: ";
