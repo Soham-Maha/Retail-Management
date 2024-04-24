@@ -251,10 +251,14 @@ public:
         int choice;
         cout << "  \t\t\t\t________________________________________________________________________\n";
         cout << "  \t\t\t\t|                                                                       |\n";
-        cout << "  \t\t\t\t|                              Buyer Menu                                                   |\n";
-        cout << "\n\t\t\t\t|______1) Buy Product_______|";
-        cout << "\n\t\t\t\t|                           |";
-        cout << "\n\t\t\t\t|______2) Go back___________|";
+        cout << "  \t\t\t\t|                              Buyer Menu                               |\n";
+        cout << "  \t\t\t\t|                                                                       |\n";
+        cout << "  \t\t\t\t|_______________________________________________________________________|\n";
+        cout << "  \t\t\t\t|                                                                       |";
+        cout << "\n\t\t\t\t|                         1) Buy Product                                |";
+        cout << "\n\t\t\t\t|                                                                       |";
+        cout << "\n\t\t\t\t|                         2) Go back                                    |\n";
+        cout << "  \t\t\t\t|_______________________________________________________________________|";
         cout << endl;
 
         cout << "\t\t\t\t  Enter your Choice: ";
