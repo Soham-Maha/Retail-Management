@@ -57,15 +57,15 @@ public:
         cout << "  \t\t\t\t|                              Administrator Menu                       |\n";
         cout<<  "  \t\t\t\t|_______________________________________________________________________|\n";
         cout << "  \t\t\t\t|                                                                       |";
-        cout << "\n\t\t\t\t|______________________________1) Add new product_______________________|";
+        cout << "\n\t\t\t\t|                              1) Add new product                       |";
         cout << "\n\t\t\t\t|                                                                       |";
-        cout << "\n\t\t\t\t|______________________________2) Modify the product____________________|";
+        cout << "\n\t\t\t\t|                              2) Modify the product                    |";
         cout << "\n\t\t\t\t|                                                                       |";
-        cout << "\n\t\t\t\t|______________________________3) Remove product________________________|";
+        cout << "\n\t\t\t\t|                              3) Remove product                        |";
         cout << "\n\t\t\t\t|                                                                       |";
-        cout << "\n\t\t\t\t|______________________________4) List products_________________________|";
+        cout << "\n\t\t\t\t|                              4) List products                         |";
         cout << "\n\t\t\t\t|                                                                       |";
-        cout << "\n\t\t\t\t|______________________________5) Back to Main menu_____________________|";
+        cout << "\n\t\t\t\t|                              5) Back to Main menu                     |";
         cout << "\n\t\t\t\t|_______________________________________________________________________|";
 
 
@@ -249,7 +249,9 @@ class Buyer : public Shopping {
 public:
     void menu() override {
         int choice;
-        cout << "\t\t\t\t  Buyer Menu \n";
+        cout << "  \t\t\t\t________________________________________________________________________\n";
+        cout << "  \t\t\t\t|                                                                       |\n";
+        cout << "  \t\t\t\t|                              Buyer Menu                                                   |\n";
         cout << "\n\t\t\t\t|______1) Buy Product_______|";
         cout << "\n\t\t\t\t|                           |";
         cout << "\n\t\t\t\t|______2) Go back___________|";
@@ -389,14 +391,14 @@ public:
         cout << "\t\t\t\t|                              Supermarket Main Menu                             |\n";
         cout << "\t\t\t\t|                                                                                |\n";
         cout << "\t\t\t\t|________________________________________________________________________________|\n";
-        cout << endl;
-
-        cout << "\t\t\t\t|                        (1) Administrator                     |\n";
-        cout << "\t\t\t\t|                                                              |\n";
-        cout << "\t\t\t\t|                        (2) Buyer                             |\n";
-        cout << "\t\t\t\t|                                                              |\n";
-        cout << "\t\t\t\t|                        (3) Exit                              |\n";
-        cout << "\t\t\t\t|                                                              |\n";
+        cout << "\t\t\t\t|                                                                                |\n";
+        cout << "\t\t\t\t|                        (1) Administrator                                       |\n";
+        cout << "\t\t\t\t|                                                                                |\n";
+        cout << "\t\t\t\t|                        (2) Buyer                                               |\n";
+        cout << "\t\t\t\t|                                                                                |\n";
+        cout << "\t\t\t\t|                        (3) Exit                                                |\n";
+        cout << "\t\t\t\t|                                                                                |\n";
+        cout << "\t\t\t\t|________________________________________________________________________________|";
 
         cout << endl;
         cout << "\t\t\t\t  Please Select: ";
