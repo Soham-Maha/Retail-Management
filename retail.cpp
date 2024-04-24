@@ -80,28 +80,28 @@ public:
             switch (choice) {
                 case 1:
                     add(); // to add a new product
-                    cout << "\t\t\t\tif you wish to continue choose again, else press 5" << endl;
+                    cout << "\n\t\t\t\tIf you wish to continue choose again, else press 5" << endl;
 
                     break;
                 case 2:
                     edit(); // to modify or edit the existing product
-                    cout << "\t\t\t\tif you wish to continue choose again, else press 5" << endl;
+                    cout << "\n\t\t\t\tIf you wish to continue choose again, else press 5" << endl;
                     break;
                 case 3:
 
                     remove(); // to remove the product
-                    cout << "\t\t\t\tif you wish to continue choose again, else press 5" << endl;
+                    cout << "\n\t\t\t\tIf you wish to continue choose again, else press 5" << endl;
                     break;
                 case 4:
                     list(); // to list products
-                    cout << "\t\t\t\tif you wish to continue choose again, else press 5" << endl;
+                    cout << "\n\t\t\t\tIf you wish to continue choose again, else press 5" << endl;
                     break;
                 case 5:
 
 
                     return;// exit the menu
                 default:
-                    cout << "\t\t\t\t  Invalid Choice!!" << endl;
+                    cout << "\n\t\t\t\t  Invalid Choice!!" << endl;
 
             }
         }
@@ -259,12 +259,12 @@ public:
         cout << "\n\t\t\t\t|                         1) Buy Product                                |";
         cout << "\n\t\t\t\t|                                                                       |";
         cout << "\n\t\t\t\t|                         2) Go back                                    |\n";
-        cout<<  "\t\t\t\t|                                                                       |\n";
-        cout<<  "\t\t\t\t|                         3) Customer Care                              |\n";
+        cout<<  "  \t\t\t\t|                                                                       |\n";
+        cout<<  "  \t\t\t\t|                         3) Customer Care                              |\n";
         cout << "  \t\t\t\t|_______________________________________________________________________|";
         cout << endl;
 
-        cout << "\t\t\t\t  Enter your Choice: ";
+        cout << "\t\t\t\tEnter your Choice: ";
         cin >> choice;
 
         switch (choice) {
@@ -300,23 +300,24 @@ public:
         cout << "\n\t\t\t\t|                        5) Go Back                                     |";
         cout << "\n\t\t\t\t|_______________________________________________________________________|\n";
         int choice;
+        cout<<"\t\t\t\tEnter your choice: ";
         cin>>choice;
         switch (choice) {
             case 1:
                 cout<<"\t\t\t\t\t\tThis is the Store number:9875xxxxxx.\n\t\t\t\tOr contact us at this email xxxxxyy@gmail.com\n\t\t\t\tFeel free to submit your query.\n\t\t\t\tYour response is valuable to us."<<endl;
                 return;
             case 2:
-                cout<<"\t\t\t\t\tKindly attach a pic of the expiry date with the bill , your address.\n\t\t\t\t\t Send the email at xxxxxyy@gmail.com . We will send a replacement immediately.\n\t\t\t\t\tSorry for the inconvenience. ";
+                cout<<"\t\t\t\tKindly attach a pic of the expiry date with the bill , your address.\n\t\t\t\tSend the email at xxxxxyy@gmail.com . We will send a replacement immediately.\n\t\t\t\tSorry for the inconvenience. ";
                 return;
             case 3:
-                cout<<"kindly enter the name of the product:"<<endl;
+                cout<<"\t\t\t\tKindly enter the name of the product:"<<endl;
                 cin>>prod;
-                cout<<"kindly enter the quantity:";
+                cout<<"\t\t\t\tkindly enter the quantity:";
                 cin>>quant;
-                cout<<"You will be notified as soon the order will arrive.";
+                cout<<"\t\t\t\tYou will be notified as soon the order will arrive.";
                 return;
             case 4:
-                cout<<"For other issues kindly meet the cc executive at the nearby store";
+                cout<<"\t\t\t\tFor other issues kindly meet the cc executive at the nearby store";
                 return;
             case 5:
                 this->menu();
@@ -403,9 +404,13 @@ public:
                 cin >> choice;
             } while (choice == "y" || choice == "Y");
 
-            cout << "\n\n\t\t\t\t_____________________________RECEIPT________________________\n";
-            cout
-                    << "\n\t\t\t\t Product No.\t Product Name\t Product quantity\t Price\t Amount\n";
+            cout << "\t\t\t\t________________________________________________________________________\n";
+            cout << "\t\t\t\t|                                                                       |\n";
+            cout << "\t\t\t\t|                                 RECEIPT                               |\n";
+            cout << "\t\t\t\t|                                                                       |\n";
+            cout << "\t\t\t\t|_______________________________________________________________________|\n";
+
+            cout << "\n\t\t\t\t Product No.\t Product Name\t Product quantity\t Price\t Amount\n";
 
             for (int i = 0; i < c; i++) {
                 data.open("database.txt", ios::in );
@@ -418,8 +423,8 @@ public:
                         amount = price * arrq[i];
                         total += amount;
 
-                        cout << "\n\t\t\t\t  " << pcode << "\t\t  " << pname << "\t\t" << arrq[i] << "\t\t" << price
-                             << "\t" << amount;
+                        cout << "\n\t\t\t\t  " << pcode << "\t\t  " << pname << "\t\t     " << arrq[i] << "\t\t\t " << price
+                             << "\t     " << amount;
                     }
                     data2 << pcode << " " << pname << " " << price << " " << quantity << "\n";
 
@@ -432,8 +437,10 @@ public:
                 rename("database2.txt", "database.txt");
             }
 
-            cout << "\n\n\t\t\t\t___________________________________________________________";
+            cout << "\n\n\t\t\t\t________________________________________________________________________";
             cout << "\n\t\t\t\t  Total Amount: " << total << endl;
+            cout << "\n";
+            cout << "\t\t\t\tThank You For Shopping With Us!";
         }
     }
 };
