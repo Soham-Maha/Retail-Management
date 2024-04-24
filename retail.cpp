@@ -31,10 +31,11 @@ public:
     virtual void list() {
         fstream data;
         data.open("database.txt", ios::in);
-
-        cout << "\n\n\t\t\t\t|____________________________________________________________________|\n";
-        cout << "\t\t\t\t  Product No. \t  Name \t\t Price \t\t quantity \n";
-        cout << "\n\n\t\t\t\t|____________________________________________________________________|\n";
+        cout << "\n\t\t\t\t________________________________________________________________________\n";
+        cout << "  \t\t\t\t|                                                                       |\n";
+        cout << "  \t\t\t\t|Product No. \t  Name \t\t Price \t\t quantity               |\n";
+        cout << "  \t\t\t\t|                                                                       |";
+        cout << "\n\t\t\t\t|_______________________________________________________________________|\n";
         data >> pcode >> pname >> price >> quantity;
 
         while (!data.eof()) {
@@ -54,18 +55,18 @@ public:
         cout << endl;
         cout << "  \t\t\t\t________________________________________________________________________\n";
         cout << "  \t\t\t\t|                                                                       |\n";
-        cout << "  \t\t\t\t|                              Administrator Menu                       |\n";
+        cout << "  \t\t\t\t|                        Administrator Menu                             |\n";
         cout<<  "  \t\t\t\t|_______________________________________________________________________|\n";
         cout << "  \t\t\t\t|                                                                       |";
-        cout << "\n\t\t\t\t|                              1) Add new product                       |";
+        cout << "\n\t\t\t\t|                        1) Add new product                             |";
         cout << "\n\t\t\t\t|                                                                       |";
-        cout << "\n\t\t\t\t|                              2) Modify the product                    |";
+        cout << "\n\t\t\t\t|                        2) Modify the product                          |";
         cout << "\n\t\t\t\t|                                                                       |";
-        cout << "\n\t\t\t\t|                              3) Remove product                        |";
+        cout << "\n\t\t\t\t|                        3) Remove product                              |";
         cout << "\n\t\t\t\t|                                                                       |";
-        cout << "\n\t\t\t\t|                              4) List products                         |";
+        cout << "\n\t\t\t\t|                        4) List products                               |";
         cout << "\n\t\t\t\t|                                                                       |";
-        cout << "\n\t\t\t\t|                              5) Back to Main menu                     |";
+        cout << "\n\t\t\t\t|                        5) Back to Main menu                           |";
         cout << "\n\t\t\t\t|_______________________________________________________________________|";
 
 
@@ -288,7 +289,12 @@ public:
 
         float total = 0;
 
-        cout << "\n\n\t\t\t\t                          RECEIPT                      ";
+        cout << "\n\t\t\t\t________________________________________________________________________\n";
+        cout << "  \t\t\t\t|                                                                       |\n";
+        cout << "  \t\t\t\t|                         List Of Products                              |\n ";
+        cout << "  \t\t\t\t|                                                                       |\n";
+        cout << "  \t\t\t\t|_______________________________________________________________________|\n";
+
         data.open("database.txt", ios::in);
 
         if (!data) {
@@ -298,11 +304,11 @@ public:
             data.close();
             list(); // display the list of products
 
-            cout << "\n\t\t\t\t__________________________________________________\n";
-            cout << "\n\t\t\t\t|                                                 |\n";
-            cout << "\n\t\t\t\t|            Please place your order              |\n";
-            cout << "\n\t\t\t\t|                                                 |\n";
-            cout << "\n\t\t\t\t__________________________________________________\n";
+            cout << "\n\t\t\t\t__________________________________________________";
+            cout << "\n\t\t\t\t|                                                 |";
+            cout << "\n\t\t\t\t|            Please place your order              |";
+            cout << "\n\t\t\t\t|                                                 |";
+            cout << "\n\t\t\t\t|_________________________________________________|\n";
 
             do {
                 cout << "\n\n\t\t\t\t  Enter Product Code: ";
